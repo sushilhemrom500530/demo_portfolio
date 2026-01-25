@@ -1,11 +1,13 @@
 import HeroSection from "../components/hero-section";
+import WorkSection from "../components/work-section";
 
 
 
 export default function Home() {
   return (
-    <main>
+    <main className="container mx-auto">
       <HeroSection />
+      <WorkSection />
     </main>
   );
 }

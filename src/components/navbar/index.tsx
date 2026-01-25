@@ -15,23 +15,19 @@ export default function Navbar() {
 
     // Navigation links
     const navLinks = [
-        { title: "Home", href: "/" },
+        { title: "Home", href: "#home" },
         {
-            title: "Services",
-            href: "services",
+            title: "Work",
+            href: "/work",
         },
         {
-            title: "Blogs",
-            href: "/blogs"
+            title: "About",
+            href: "/about",
         },
         {
-            title: "About us",
-            href: "about-us",
-        },
-        {
-            title: "Contact us",
-            href: "contact-us"
-        },
+            title: "Contact",
+            href: "/contact",
+        }
     ];
 
     // Handle scroll event to toggle sticky navbar
@@ -43,10 +39,10 @@ export default function Navbar() {
 
     return (
         <header
-            className={`fixed top-0 left-0 w-full z-10 py-4 transition-all duration-300 text-black 
+            className={`fixed top-0 left-0 w-full z-10 border-b border-gray-200 transition-all duration-300 text-black mb-20
             ${isScroll
-                    ? "bg-black  bg-opacity-75 backdrop-blur-md"
-                    : "bg-black lg:bg-transparent lg:py-8"
+                    ? "bg-white backdrop-blur-xl py-3.5 backdrop-brightness-100"
+                    : "bg-white lg:bg-transparent border-b border-gray-200 py-6 "
                 }`}
         >
             <div className="container mx-auto flex items-center justify-between px-4">
@@ -59,7 +55,7 @@ export default function Navbar() {
                         <Link
                             key={index}
                             href={link.href}
-                            className="relative text-white font-medium pb-2 group"
+                            className="relative text-black font-medium pb-2 group"
                         >
                             {link.title}
                             <span
@@ -72,7 +68,7 @@ export default function Navbar() {
                             />
                         </Link>
                     ))}
-                </nav> 
+                </nav>
 
                 {/* Mobile Menu Button */}
                 <div className="lg:hidden">

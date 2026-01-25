@@ -1,5 +1,4 @@
-"use client"
-import Image from "next/image";
+"use client" 
 import Link from "next/link";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FaInstagram, FaXTwitter } from "react-icons/fa6";
@@ -102,8 +101,7 @@ export default function Footer() {
     ];
 
     return (
-        <div className=" relative">
-
+        <div className=" relative"> 
             <div className="container mx-auto p-4">
                 <div className=" w-full h-auto min-h-[394px] lg:pt-[80px] pt-10">
                     <div className="flex items-center md:items-start justify-between flex-col lg:flex-row gap-10">

@@ -1,46 +1,21 @@
-import React from 'react'
-import background from "../../assets/background.jpg" 
-import Image from 'next/image'
-import Title from '../reuseable/title'
-
 export default function HeroSection() {
     return (
-        <div
-            style={{
-                backgroundImage: `url(${background.src})`,
-                backgroundPosition: '30%  center',
-            }}
-            className=" w-full lg:h-[730px] h-auto bg-no-repeat bg-cover bg-center relative"
-        >
-            <div className='absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.9)]'></div>
-            <div className="container mx-auto">
-                <div className=" flex items-center flex-col lg:flex-row justify-center lg:gap-20 lg:pt-28 py-20 lg:pb-[156px] p-4 ">
-                    <div className="flex items-start justify-start flex-col relative pt-12 xl:w-[666px] lg:w-auto">
-                        <Title
-                            title="Where Imagination Meets Mastery!"
-                            className='text-white'
-                            visible={false}
-                            description="Step into a world of boundless creativity with Artifiex. Empowering artists, visionaries, and creators to craft extraordinary experiences, we provide the ultimate canvas for your ideas to shine. Let your masterpiece begin here."
-                        />
-                        <button
-                            variant='primary'
-                            className='text-sm lg:text-base w-max mt-5 lg:mt-[60px]'
-                        >
-                            GET STARTED
-                        </button>
-                    </div>
-                    <div className="flex-1 w-full p-2">
-                        <div className="xl:w-[666px] lg:w-[303px] md:w-[500px] w-full relative top-10">
-
-                            <Image
-                                src={background}
-                                alt="hero image"
-                                className="object-fill rounded-2xl z-20 ml-0 md:ml-20 lg:ml-0"
-                                layout="responsive"
-                            />
-                        </div>
-                    </div>
+        <div className=" flex items-center flex-col lg:flex-row justify-center p-4 mt-20 mb-32">
+            <div className="flex items-start justify-start flex-col relative pt-24 xl:w-[896px] lg:w-auto w-full">
+                <h2
+                    className='text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-medium'
+                >
+                    Hi, I'm Tamim,
+                </h2>
+                <div className='flex items-center text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-medium mt-1'>
+                    a Product (
+                    <span className='w-8 h-8 rounded-full bg-[#FB2C36]'></span>
+                    <span className='w-8 h-8 rounded-full bg-[#2B7FFF] mx-1'></span>
+                    <span className='w-8 h-8 rounded-full bg-[#FDC700]'></span>
+                    )
+                    Designer.
                 </div>
+                <p className="text-[#4A5565] text-lg mt-4 font-normal">I simplify your web delight.</p>
             </div>
         </div>
     )
