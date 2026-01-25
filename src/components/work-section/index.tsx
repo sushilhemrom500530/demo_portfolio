@@ -50,7 +50,7 @@ const projects: Project[] = [
 
 export default function WorkSection() {
     return (
-        <div className="p-4 mt-20 mb-32">
+        <div className="p-4 mt-20 mb-32 bg-[#f9fafb]">
             <div className="mb-12">
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-medium">Work</h1>
                 <p className="text-[#4A5565] text-base mt-4 font-normal lg:w-[549px]">
@@ -66,7 +66,7 @@ export default function WorkSection() {
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className="bg-gray-100 rounded-lg p-5 hover:shadow-md transition-shadow"
+                        className="bg-white rounded-lg p-5 hover:shadow transition-shadow"
                     >
                         {/* Header */}
                         <div className="flex items-center justify-between mb-4">
