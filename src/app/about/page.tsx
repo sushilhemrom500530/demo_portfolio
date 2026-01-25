@@ -1,6 +1,5 @@
-
-import { FaArrowRight } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
+import banner_image from "../../assets/about-banner.png"
 
 export default function AboutPage() {
     const experiences = [
@@ -20,27 +19,26 @@ export default function AboutPage() {
 
     return (
         <div className="w-full mt-[88px]">
-            {/* Hero Section with Background Image */}
             <div className="relative w-full min-h-[600px] md:min-h-[700px] flex items-center justify-start px-4 md:px-8 lg:px-16 py-24 md:py-32 overflow-hidden">
-                {/* Background Image with Overlay */}
-                <div 
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110"
+
+                <div
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                     style={{
-                        backgroundImage: 'url(https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&q=80)'
+                        backgroundImage: `url(${banner_image?.src})`
                     }}
                 >
-                    <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+                    <div className="absolute inset-0 bg-black/10 backdrop-blur-sm"></div>
                 </div>
-                
+
                 {/* Content */}
-                <div className="relative z-10 max-w-3xl text-white">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-8">
+                <div className="relative z-10 max-w-[554px] bg-black/10 backdrop-blur-md text-white rounded-lg px-10 py-12">
+                    <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 md:mb-8">
                         Hi, I am Tamim
                     </h1>
-                    <p className="text-base md:text-lg lg:text-xl font-normal mb-4 leading-relaxed">
+                    <p className="text-base font-normal mb-4 leading-relaxed">
                         I'm a passionate Product Designer with expertise in creating delightful user experiences. My work focuses on simplifying complex problems and crafting intuitive interfaces that users love.
                     </p>
-                    <p className="text-base md:text-lg lg:text-xl font-normal leading-relaxed">
+                    <p className="text-base font-normal leading-relaxed">
                         With experience working with companies like Microsoft, Americor, and various startups, I've helped teams create products that make a real difference in people's lives.
                     </p>
                 </div>
@@ -48,25 +46,25 @@ export default function AboutPage() {
 
             {/* Main Content Area */}
             <div className="bg-white py-16 md:py-24 px-4 md:px-8 lg:px-16">
-                <div className="container mx-auto max-w-7xl">
+                <div className="container mx-auto max-w-7xl space-y-12">
                     {/* Experience Section */}
-                    <div className="mb-20 md:mb-32">
+                    <div>
                         <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
                             {/* Left Side - Title and Button */}
-                            <div className="lg:w-1/3">
-                                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6">
+                            <div className="lg:w-1/3 lg:border-e border-e-gray-200">
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl text-black mb-6">
                                     Experience
                                 </h2>
-                                <button className="flex items-center gap-2 px-6 py-3 border border-[#60A5FA] text-[#60A5FA] rounded-md bg-white hover:bg-[#60A5FA] hover:text-white transition-colors">
+                                <button className="flex items-center gap-2 px-6 py-2 border border-[#60A5FA] text-[#60A5FA] rounded-full bg-white hover:bg-[#60A5FA] hover:text-white transition-colors cursor-pointer">
                                     <span className="text-base font-normal">Resume</span>
                                     <span className="text-base font-normal">+</span>
                                 </button>
                             </div>
 
                             {/* Right Side - Experience Entries */}
-                            <div className="lg:w-2/3 space-y-10 md:space-y-12">
+                            <div className="lg:w-2/3">
                                 {experiences.map((exp, index) => (
-                                    <div key={index} className="flex flex-col md:flex-row gap-6 md:gap-8">
+                                    <div key={index} className={`flex flex-col md:flex-row gap-6 md:gap-8 py-7 ${index === 0 && "border-b border-b-gray-200"} `}>
                                         <div className="md:w-2/5">
                                             <h3 className="text-lg md:text-xl font-bold text-black mb-2">
                                                 {exp.company}
@@ -88,13 +86,13 @@ export default function AboutPage() {
                             </div>
                         </div>
                     </div>
-
+                    <div className="!border-b !border-b-gray-200" />
                     {/* Education Section */}
                     <div className="mb-20 md:mb-32">
                         <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
                             {/* Left Side - Title */}
-                            <div className="lg:w-1/3">
-                                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black">
+                            <div className="lg:w-1/3 lg:border-e border-e-gray-200">
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl text-black mb-6">
                                     Education
                                 </h2>
                             </div>
@@ -115,22 +113,21 @@ export default function AboutPage() {
                             </div>
                         </div>
                     </div>
-
-                    {/* Gallery Section */}
-                    <div>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black text-center mb-12">
-                            Gallery
-                        </h2>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            {[1, 2, 3].map((item) => (
-                                <div
-                                    key={item}
-                                    className="bg-gray-200 rounded-lg aspect-[4/3] flex items-center justify-center group cursor-pointer hover:bg-gray-300 transition-colors"
-                                >
-                                    <FiExternalLink className="w-8 h-8 text-gray-400 group-hover:text-gray-600 transition-colors" />
-                                </div>
-                            ))}
-                        </div>
+                </div>
+                {/* Gallery Section */}
+                <div className="container mx-auto p-4">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl text-black text-center mb-12">
+                        Gallery
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {[1, 2, 3].map((item) => (
+                            <div
+                                key={item}
+                                className="bg-gray-200 rounded-lg aspect-[4/3] flex items-center justify-center group cursor-pointer hover:bg-gray-300 transition-colors"
+                            >
+                                <FiExternalLink className="w-8 h-8 text-gray-400 group-hover:text-gray-600 transition-colors" />
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

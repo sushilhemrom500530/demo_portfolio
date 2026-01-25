@@ -9,9 +9,9 @@ export default function Navbar() {
     const pathname = usePathname();
     const [isScroll, setIsScroll] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
- 
+
     const toggleMenu = () => setMenuOpen((prev) => !prev);
- 
+
     const navLinks = [
         {
             title: "Work",
@@ -25,7 +25,7 @@ export default function Navbar() {
             title: "Contact",
             href: "/contact",
         }
-    ]; 
+    ];
 
     useEffect(() => {
         const handleScroll = () => setIsScroll(window.scrollY > 0);
@@ -41,8 +41,8 @@ export default function Navbar() {
                     : "bg-white lg:bg-transparent border-b border-gray-200 py-6 "
                 }`}
         >
-            <div className="container mx-auto flex items-center justify-between px-4"> 
-                <Logo isScroll={isScroll} /> 
+            <div className="container mx-auto flex items-center justify-between px-4">
+                <Logo isScroll={isScroll} />
                 <nav className="hidden lg:flex space-x-7">
                     {navLinks.map((link, index) => (
                         <Link
@@ -52,9 +52,9 @@ export default function Navbar() {
                         >
                             {link.title}
                             <span
-                                className={`absolute left-0 bottom-0 block w-full h-[3px] bg-[#2571ff] transition-transform duration-500 ease-in-out origin-right group-hover:origin-left
+                                className={`absolute left-0 bottom-0 block w-full rounded h-[3px] bg-[#2571ff] transition-transform duration-500 ease-in-out origin-right group-hover:origin-left
                                     ${pathname === link.href
-                                        ? "scale-x-100 bg-[#155DFC]"
+                                        ? "scale-x-100 "
                                         : "scale-x-0 group-hover:scale-x-100"
                                     }
                                 `}
@@ -77,7 +77,7 @@ export default function Navbar() {
                     className="fixed w-full h-screen inset-0 bg-black bg-opacity-75 z-40"
                     onClick={toggleMenu}
                 ></div>
-            )} 
+            )}
             <aside
                 className={`fixed top-0 left-0 !z-[999] w-64 h-screen bg-white text-black shadow-xl transform transition-transform duration-300 ease-in-out
                 ${menuOpen ? "translate-x-0" : "-translate-x-full"}`}
