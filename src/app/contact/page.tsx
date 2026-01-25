@@ -25,13 +25,20 @@ export default function ContactPage() {
     return (
         <div className="min-h-screen bg-white py-24 px-4 md:px-8 lg:px-16 mt-[88px]">
             <div className="container mx-auto max-w-6xl">
-                <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+                <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+                    {/* Right Side - Descriptive Text */}
+                    <div className="lg:hidden flex-1 w-full flex items-start pt-12 lg:pt-0">
+                        <p className="text-base md:text-lg text-gray-700 font-normal leading-relaxed lg:w-[320px] ">
+                            Let's make it happen together! We’re
+                            eager to connect with you.
+                        </p>
+                    </div>
                     {/* Left Side - Form */}
                     <div className="flex-1 w-full lg:w-auto">
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-8">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-12">
                             Get in Touch!
                         </h1>
-                        
+
                         <form onSubmit={handleSubmit} className="space-y-6">
                             {/* Name Field */}
                             <div>
@@ -75,7 +82,7 @@ export default function ContactPage() {
                             {/* Submit Button */}
                             <button
                                 type="submit"
-                                className="w-full px-6 py-3 bg-[#2563EB] hover:bg-[#1d4ed8] text-white font-normal rounded-lg transition-colors text-base"
+                                className="w-max px-6 lg:px-20 py-3 bg-[#2563EB] hover:bg-[#1d4ed8] text-white font-normal cursor-pointer rounded-lg transition-colors text-base"
                             >
                                 Send Email
                             </button>
@@ -83,9 +90,10 @@ export default function ContactPage() {
                     </div>
 
                     {/* Right Side - Descriptive Text */}
-                    <div className="flex-1 w-full lg:w-auto flex items-start pt-12 lg:pt-0">
-                        <p className="text-base md:text-lg text-gray-700 font-normal leading-relaxed">
-                            Let's make it happen together! We're eager to connect with you.
+                    <div className="hidden lg:block flex-1 w-full flex items-start pt-12 lg:pt-0">
+                        <p className="text-base md:text-lg text-gray-700 font-normal leading-relaxed lg:w-[320px] ">
+                            Let's make it happen together! We’re
+                            eager to connect with you.
                         </p>
                     </div>
                 </div>
