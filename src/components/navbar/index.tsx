@@ -9,16 +9,13 @@ export default function Navbar() {
     const pathname = usePathname();
     const [isScroll, setIsScroll] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
-
-    // Toggle menu visibility
+ 
     const toggleMenu = () => setMenuOpen((prev) => !prev);
-
-    // Navigation links
+ 
     const navLinks = [
-        { title: "Home", href: "#home" },
         {
             title: "Work",
-            href: "/work",
+            href: "/",
         },
         {
             title: "About",
@@ -28,9 +25,8 @@ export default function Navbar() {
             title: "Contact",
             href: "/contact",
         }
-    ];
+    ]; 
 
-    // Handle scroll event to toggle sticky navbar
     useEffect(() => {
         const handleScroll = () => setIsScroll(window.scrollY > 0);
         window.addEventListener("scroll", handleScroll);
@@ -39,17 +35,14 @@ export default function Navbar() {
 
     return (
         <header
-            className={`fixed top-0 left-0 w-full z-10 border-b border-gray-200 transition-all duration-300 text-black mb-20
+            className={`fixed top-0 !z-[999] left-0 w-full z-10 border-b border-gray-200 transition-all duration-300 text-black mb-20
             ${isScroll
                     ? "bg-white backdrop-blur-xl py-3.5 backdrop-brightness-100"
                     : "bg-white lg:bg-transparent border-b border-gray-200 py-6 "
                 }`}
         >
-            <div className="container mx-auto flex items-center justify-between px-4">
-                {/* Logo */}
-                <Logo isScroll={isScroll} />
-
-                {/* Desktop Navigation */}
+            <div className="container mx-auto flex items-center justify-between px-4"> 
+                <Logo isScroll={isScroll} /> 
                 <nav className="hidden lg:flex space-x-7">
                     {navLinks.map((link, index) => (
                         <Link
@@ -61,7 +54,7 @@ export default function Navbar() {
                             <span
                                 className={`absolute left-0 bottom-0 block w-full h-[3px] bg-[#2571ff] transition-transform duration-500 ease-in-out origin-right group-hover:origin-left
                                     ${pathname === link.href
-                                        ? "scale-x-100"
+                                        ? "scale-x-100 bg-[#155DFC]"
                                         : "scale-x-0 group-hover:scale-x-100"
                                     }
                                 `}
@@ -72,7 +65,7 @@ export default function Navbar() {
 
                 {/* Mobile Menu Button */}
                 <div className="lg:hidden">
-                    <button className="cursor-pointer text-white" onClick={() => toggleMenu()}>
+                    <button className="cursor-pointer text-black" onClick={() => toggleMenu()}>
                         <RiMenu3Fill size={24} />
                     </button>
                 </div>
@@ -84,9 +77,7 @@ export default function Navbar() {
                     className="fixed w-full h-screen inset-0 bg-black bg-opacity-75 z-40"
                     onClick={toggleMenu}
                 ></div>
-            )}
-
-            {/* Mobile Sidebar */}
+            )} 
             <aside
                 className={`fixed top-0 left-0 !z-[999] w-64 h-screen bg-white text-black shadow-xl transform transition-transform duration-300 ease-in-out
                 ${menuOpen ? "translate-x-0" : "-translate-x-full"}`}

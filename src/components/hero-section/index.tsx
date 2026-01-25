@@ -9,9 +9,9 @@ export default function HeroSection() {
                 </h2>
                 <div className='flex items-center text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-medium mt-1'>
                     a Product (
-                    <span className='w-8 h-8 rounded-full bg-[#FB2C36]'></span>
-                    <span className='w-8 h-8 rounded-full bg-[#2B7FFF] mx-1'></span>
-                    <span className='w-8 h-8 rounded-full bg-[#FDC700]'></span>
+                    <span className='w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8 rounded-full bg-[#FB2C36]'></span>
+                    <span className='w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8 rounded-full bg-[#2B7FFF] mx-1'></span>
+                    <span className='w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8 rounded-full bg-[#FDC700]'></span>
                     )
                     Designer.
                 </div>

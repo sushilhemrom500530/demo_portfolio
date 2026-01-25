@@ -50,23 +50,23 @@ const projects: Project[] = [
 
 export default function WorkSection() {
     return (
-        <div className="p-4 mt-20 mb-32 bg-[#f9fafb]">
-            <div className="mb-12">
+        <div className="p-4 my-20 bg-[#f9fafb] lg:px-8 py-9">
+            <div className="pb-9">
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-medium">Work</h1>
                 <p className="text-[#4A5565] text-base mt-4 font-normal lg:w-[549px]">
                     My professional work for high-level e-Commerce has been documented. each assignment is designed to fit the gap, both in Behavior.
                 </p>
-                <button className="mt-6 flex items-center gap-2 px-6 py-3 border border-gray-300 rounded-md bg-white hover:bg-gray-50 transition-colors">
-                    <span className="text-base font-normal">Resume</span>
+                <button className="mt-6 flex items-center gap-2 px-6 py-2 border border-gray-600 rounded-full cursor-pointer bg-white hover:bg-gray-50 transition-colors">
+                    <span className="text-base text-[#0A0A0A] font-normal">Resume</span>
                     <FaArrowRight className="w-4 h-4" />
                 </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className="bg-white rounded-lg p-5 hover:shadow transition-shadow"
+                        className="bg-white rounded-lg px-6 pt-6 pb-4 transition-shadow"
                     >
                         {/* Header */}
                         <div className="flex items-center justify-between mb-4">
@@ -78,8 +78,8 @@ export default function WorkSection() {
                         </div>
 
                         {/* Image Placeholder */}
-                        <div className="relative w-full h-64 bg-gray-200 rounded-md mb-4 flex items-center justify-center group cursor-pointer hover:bg-gray-300 transition-colors">
-                            <FiExternalLink className="w-6 h-6 text-gray-500" />
+                        <div className="relative w-full h-52 md:h-72 lg:h-[432px] bg-gray-200 rounded-md mb-4 flex items-center justify-center group cursor-pointer hover:bg-gray-300 transition-colors">
+                            <FiExternalLink className="w-6 h-6 text-[#99A1AF]" />
                         </div>
 
                         {/* Title */}

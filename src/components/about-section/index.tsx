@@ -3,7 +3,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 export default function AboutSection() {
     return (
-        <div className="p-4 mt-20 mb-32">
+        <div className="p-4 my-10">
             <div className="mb-12">
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-medium">About</h1>
                 <p className="text-[#4A5565] text-base mt-4 font-normal lg:w-[845px]">
